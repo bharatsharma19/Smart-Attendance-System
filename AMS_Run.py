@@ -228,7 +228,7 @@ def manually_fill():
                 import csv
 
                 cursor.execute("select * from " + DB_table_name + ";")
-                csv_name = "D:/attendance-management-system-main/attendance-management-system-main/Attendance/Manual Attendance/Manual_Attendance_Sheet.csv"
+                csv_name = "D:/Bharat Sharma/Studies/MITS/Third Year/Semester 5/Minor Project/Student Attendance System/Attendance/Manual Attendance/Manual_Attendance_Sheet.csv"
                 with open(csv_name, "w") as csv_file:
                     csv_writer = csv.writer(csv_file)
                     csv_writer.writerow(
@@ -339,7 +339,7 @@ def manually_fill():
                 import subprocess
 
                 subprocess.Popen(
-                    r'explorer /select," D:/attendance-management-system-main/attendance-management-system-main/Attendance/Manual Attendance/-------Check atttendance-------"'
+                    r'explorer /select,"D:/Bharat Sharma/Studies/MITS/Third Year/Semester 5/Minor Project/Student Attendance System/Attendance/Manual Attendance/-------Check atttendance-------"'
                 )
 
             attf = tk.Button(
@@ -721,7 +721,7 @@ def subjectchoose():
                 root.title("Attendance of " + Subject)
                 root.configure(background="#1B1B1B")
                 cs = (
-                    "D:/attendance-management-system-main/attendance-management-system-main/"
+                    "D:/Bharat Sharma/Studies/MITS/Third Year/Semester 5/Minor Project/Student Attendance System/"
                     + fileName
                 )
                 with open(cs, newline="") as file:
@@ -768,7 +768,7 @@ def subjectchoose():
         import subprocess
 
         subprocess.Popen(
-            r'explorer /select," D:/attendance-management-system-main/attendance-management-system-main/Attendance/Manual Attendance/Attendance/-------Check atttendance-------"'
+            r'explorer /select," D:/Bharat Sharma/Studies/MITS/Third Year/Semester 5/Minor Project/Student Attendance System/Attendance/Manual Attendance/-------Check atttendance-------"'
         )
 
     attf = tk.Button(
@@ -835,7 +835,7 @@ def admin_panel():
                 root = tkinter.Tk()
                 root.title("Student Details")
                 root.configure(background="#1B1B1B")
-                cs = "D:/attendance-management-system-main/attendance-management-system-main/StudentDetails/StudentDetails.csv"
+                cs = "D:/Bharat Sharma/Studies/MITS/Third Year/Semester 5/Minor Project/Student Attendance System/StudentDetails/StudentDetails.csv"
                 with open(cs, newline="") as file:
                     reader = csv.reader(file)
                     r = 0
