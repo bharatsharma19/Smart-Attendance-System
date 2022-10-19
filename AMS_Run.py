@@ -9,16 +9,14 @@ import pandas as pd
 import datetime
 import time
 
-
 # Window is our Main frame of the system
 window = tk.Tk()
 window.title("Face Recognition Based Attendance Management System")
 
 window.geometry("1280x720")
-window.configure(background="#1B1B1B")
+window.configure(background="#7f8c8d")
 
 # GUI for Manually Fill Attendance
-
 
 def manually_fill():
     global sb
@@ -72,40 +70,6 @@ def manually_fill():
         DB_table_name = str(
             subb + "_" + Date + "_Time_" + Hour + "_" + Minute + "_" + Second
         )
-
-        import pymysql.connections
-
-        # Connect to the database
-        try:
-            global cursor
-            connection = pymysql.connect(
-                host="localhost",
-                user="root",
-                password="",
-                db="attendancesystem",
-            )
-            cursor = connection.cursor()
-        except Exception as e:
-            print(e)
-
-        sql = (
-            "CREATE TABLE "
-            + DB_table_name
-            + """
-                        (ID INT NOT NULL AUTO_INCREMENT,
-                         ENROLLMENT varchar(100) NOT NULL,
-                         NAME VARCHAR(50) NOT NULL,
-                         DATE VARCHAR(20) NOT NULL,
-                         TIME VARCHAR(20) NOT NULL,
-                             PRIMARY KEY (ID)
-                             );
-                        """
-        )
-
-        try:
-            cursor.execute(sql)  # to create a table
-        except Exception as ex:
-            print(ex)
 
         if subb == "":
             err_screen_for_subject()
@@ -227,7 +191,6 @@ def manually_fill():
             def create_csv():
                 import csv
 
-                cursor.execute("select * from " + DB_table_name + ";")
                 csv_name = "D:/Bharat Sharma/Studies/MITS/Third Year/Semester 5/Minor Project/Student Attendance System/Attendance/Manual Attendance/Manual_Attendance_Sheet.csv"
                 with open(csv_name, "w") as csv_file:
                     csv_writer = csv.writer(csv_file)
@@ -392,18 +355,14 @@ def manually_fill():
 
 # For Clear textbox
 
-
 def clear():
     txt.delete(first=0, last=22)
-
 
 def clear1():
     txt2.delete(first=0, last=22)
 
-
 def del_sc1():
     sc1.destroy()
-
 
 def err_screen():
     global sc1
@@ -434,10 +393,8 @@ def err_screen():
 
 # Error-screen2
 
-
 def del_sc2():
     sc2.destroy()
-
 
 def err_screen1():
     global sc2
@@ -467,7 +424,6 @@ def err_screen1():
 
 
 # For Take Images for datasets
-
 
 def take_img():
     l1 = txt.get()
@@ -532,7 +488,6 @@ def take_img():
 
 
 # For Choose Subject and Fill Attendance
-
 
 def subjectchoose():
     def Fillattendances():
@@ -648,60 +603,8 @@ def subjectchoose():
                 attendance = attendance.drop_duplicates(
                     ["Roll No."], keep="first")
                 print(attendance)
+                
                 attendance.to_csv(fileName, index=False)
-
-                # Create table for attendance
-                date_for_DB = datetime.datetime.fromtimestamp(
-                    ts).strftime("%Y_%m_%d")
-                DB_Table_name = str(
-                    Subject
-                    + "_"
-                    + date_for_DB
-                    + "_Time_"
-                    + Hour
-                    + "_"
-                    + Minute
-                    + "_"
-                    + Second
-                )
-                import pymysql.connections
-
-                # Connect to the database
-                try:
-                    global cursor
-                    connection = pymysql.connect(
-                        host="localhost", user="root", password="", db="Face_reco_fill"
-                    )
-                    cursor = connection.cursor()
-                except Exception as e:
-                    print(e)
-
-                sql = (
-                    "CREATE TABLE "
-                    + DB_Table_name
-                    + """
-                (ID INT NOT NULL AUTO_INCREMENT,
-                 ENROLLMENT varchar(100) NOT NULL,
-                 NAME VARCHAR(50) NOT NULL,
-                 DATE VARCHAR(20) NOT NULL,
-                 TIME VARCHAR(20) NOT NULL,
-                     PRIMARY KEY (ID)
-                     );
-                """
-                )
-                # Now enter attendance in database
-                insert_data = (
-                    "INSERT INTO "
-                    + DB_Table_name
-                    + " (ID,ENROLLMENT,NAME,DATE,TIME) VALUES (0, %s, %s, %s,%s)"
-                )
-                VALUES = (str(Id), str(aa), str(date), str(timeStamp))
-                try:
-                    cursor.execute(sql)  # To create a table
-                    # To insert data into table
-                    cursor.execute(insert_data, VALUES)
-                except Exception as ex:
-                    print(ex)  #
 
                 M = "Attendance filled Successfully"
                 Notifica.configure(
