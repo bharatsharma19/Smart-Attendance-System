@@ -643,8 +643,6 @@ def subjectchoose():
                     + Hour
                     + "-"
                     + Minute
-                    + "-"
-                    + Second
                     + ".csv"
                 )
                 attendance = attendance.drop_duplicates(
