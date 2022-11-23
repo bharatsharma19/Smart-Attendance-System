@@ -223,11 +223,11 @@ def manually_fill():
                             # some styling
                             label = tkinter.Label(
                                 root,
-                                width=13,
+                                width=24,
                                 height=1,
                                 fg="black",
                                 font=("roboto", 13, " bold "),
-                                bg="lawn green",
+                                bg="Grey",
                                 text=row,
                                 relief=tkinter.RIDGE,
                             )
@@ -608,7 +608,7 @@ def subjectchoose():
 
                 M = "Attendance filled Successfully"
                 Notifica.configure(
-                    text=M, bg="Green", fg="white", width=33, font=("times", 15, "bold")
+                    text=M, bg="Grey", fg="white", width=64, font=("times", 15, "bold")
                 )
                 Notifica.place(x=20, y=250)
 
@@ -635,11 +635,11 @@ def subjectchoose():
                             # some styling
                             label = tkinter.Label(
                                 root,
-                                width=8,
+                                width=16,
                                 height=1,
                                 fg="black",
                                 font=("roboto", 15, " bold "),
-                                bg="lawn green",
+                                bg="Grey",
                                 text=row,
                                 relief=tkinter.RIDGE,
                             )
@@ -654,13 +654,13 @@ def subjectchoose():
     windo.iconbitmap("AMS.ico")
     windo.title("Enter Subject Name")
     windo.geometry("580x320")
-    windo.configure(background="#1B1B1B")
+    windo.configure(background="Grey")
     Notifica = tk.Label(
         windo,
         text="Attendance filled successfully",
-        bg="Green",
+        bg="Grey",
         fg="white",
-        width=33,
+        width=64,
         height=2,
         font=("times", 15, "bold"),
     )
@@ -721,7 +721,7 @@ def admin_panel():
     win.iconbitmap("AMS.ico")
     win.title("Log-in")
     win.geometry("880x420")
-    win.configure(background="#1B1B1B")
+    win.configure(background="Grey")
 
     def log_in():
         username = un_entr.get()
@@ -747,8 +747,8 @@ def admin_panel():
                             # some styling
                             label = tkinter.Label(
                                 root,
-                                width=8,
-                                height=1,
+                                width=16,
+                                height=2,
                                 fg="black",
                                 font=("roboto", 15, " bold "),
                                 bg="#dddddd",
@@ -780,9 +780,9 @@ def admin_panel():
     Nt = tk.Label(
         win,
         text="Attendance filled Successfully",
-        bg="Green",
+        bg="Grey",
         fg="white",
-        width=40,
+        width=54,
         height=2,
         font=("times", 19, "bold"),
     )
@@ -790,7 +790,7 @@ def admin_panel():
 
     un = tk.Label(
         win,
-        text="Enter username",
+        text="Enter Username",
         width=15,
         height=2,
         fg="#F4D799",
@@ -801,7 +801,7 @@ def admin_panel():
 
     pw = tk.Label(
         win,
-        text="Enter password",
+        text="Enter Password",
         width=15,
         height=2,
         fg="#F4D799",
