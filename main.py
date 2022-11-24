@@ -464,7 +464,7 @@ def take_img():
                 if cv2.waitKey(1) & 0xFF == ord("q"):
                     break
                 # break if the sample number is more than 100
-                elif sampleNum > 96:
+                elif sampleNum > 100:
                     break
             cam.release()
             cv2.destroyAllWindows()
@@ -580,7 +580,7 @@ def subjectchoose():
                     attendance = attendance.drop_duplicates(
                         ["Roll No."], keep="first")
                     cv2.imshow("Filling Attendance..", im)
-                    key = cv2.waitKey(30) & 0xFF
+                    key = cv2.waitKey(87) & 0xFF
                     if key == 27:
                         break
 
@@ -952,7 +952,7 @@ message.place(x=-60, y=20)
 
 Notification = tk.Label(
     window,
-    text="All things good",
+    text="All things Good",
     bg="Green",
     fg="white",
     width=15,
