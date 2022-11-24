@@ -667,9 +667,8 @@ def subjectchoose():
 
     def Attf():
         import subprocess
-
         subprocess.Popen(
-            r'explorer /select," D:/Bharat Sharma/Studies/MITS/Third Year/Semester 5/Minor Project/Student Attendance System/Attendance/Manual Attendance/-------Check atttendance-------"'
+            r'explorer /select," D:/Bharat Sharma/Studies/MITS/Third Year/Semester 5/Minor Project/Student Attendance System/Attendance/-------Check atttendance-------"'
         )
 
     attf = tk.Button(
