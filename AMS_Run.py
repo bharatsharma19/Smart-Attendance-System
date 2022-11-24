@@ -464,7 +464,7 @@ def take_img():
                 if cv2.waitKey(1) & 0xFF == ord("q"):
                     break
                 # break if the sample number is more than 100
-                elif sampleNum > 70:
+                elif sampleNum > 96:
                     break
             cam.release()
             cv2.destroyAllWindows()
