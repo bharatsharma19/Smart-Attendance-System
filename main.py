@@ -21,7 +21,7 @@ window.configure(background="#7f8c8d")
 def manually_fill():
     global sb
     sb = tk.Tk()
-    sb.iconbitmap("AMS.ico")
+    sb.iconbitmap("favicon.ico")
     sb.title("Enter Subject Name")
     sb.geometry("580x320")
     sb.configure(background="#1B1B1B")
@@ -33,7 +33,7 @@ def manually_fill():
         global ec
         ec = tk.Tk()
         ec.geometry("300x100")
-        ec.iconbitmap("AMS.ico")
+        ec.iconbitmap("favicon.ico")
         ec.title("Warning!")
         ec.configure(background="#1B1B1B")
         Label(
@@ -76,7 +76,7 @@ def manually_fill():
         else:
             sb.destroy()
             MFW = tk.Tk()
-            MFW.iconbitmap("AMS.ico")
+            MFW.iconbitmap("favicon.ico")
             MFW.title("Manually fill attendance of: " + str(subb))
             MFW.geometry("880x470")
             MFW.configure(background="#1B1B1B")
@@ -88,7 +88,7 @@ def manually_fill():
                 global errsc2
                 errsc2 = tk.Tk()
                 errsc2.geometry("330x100")
-                errsc2.iconbitmap("AMS.ico")
+                errsc2.iconbitmap("favicon.ico")
                 errsc2.title("Warning!")
                 errsc2.configure(background="#1B1B1B")
                 Label(
@@ -368,7 +368,7 @@ def err_screen():
     global sc1
     sc1 = tk.Tk()
     sc1.geometry("300x100")
-    sc1.iconbitmap("AMS.ico")
+    sc1.iconbitmap("favicon.ico")
     sc1.title("Warning!")
     sc1.configure(background="#1B1B1B")
     Label(
@@ -400,7 +400,7 @@ def err_screen1():
     global sc2
     sc2 = tk.Tk()
     sc2.geometry("300x100")
-    sc2.iconbitmap("AMS.ico")
+    sc2.iconbitmap("favicon.ico")
     sc2.title("Warning!")
     sc2.configure(background="#1B1B1B")
     Label(
@@ -651,7 +651,7 @@ def subjectchoose():
 
     # This window is frame for Subject Chooser
     windo = tk.Tk()
-    windo.iconbitmap("AMS.ico")
+    windo.iconbitmap("favicon.ico")
     windo.title("Enter Subject Name")
     windo.geometry("580x320")
     windo.configure(background="Grey")
@@ -717,7 +717,7 @@ def subjectchoose():
 
 def admin_panel():
     win = tk.Tk()
-    win.iconbitmap("AMS.ico")
+    win.iconbitmap("favicon.ico")
     win.title("Log-in")
     win.geometry("880x420")
     win.configure(background="Grey")
@@ -926,13 +926,13 @@ def getImagesAndLabels(path):
 
 window.grid_rowconfigure(0, weight=1)
 window.grid_columnconfigure(0, weight=1)
-window.iconbitmap("AMS.ico")
+window.iconbitmap("favicon.ico")
 
 
 def on_closing():
     from tkinter import messagebox
 
-    if messagebox.askokcancel("Quit", "Do you want to quit?"):
+    if messagebox.askokcancel("Quit", "Do you want to Quit?"):
         window.destroy()
 
 
